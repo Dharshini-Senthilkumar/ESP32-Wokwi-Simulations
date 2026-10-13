@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "author": "Dharshini",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 9.6, "left": 139.24, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": 89.1, "left": -185, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "gas1:AOUT", "esp:33", "green", [ "h163.2", "v-19.2" ] ],
+    [ "esp:5V", "gas1:VCC", "red", [ "h-134.25", "v0", "h0" ] ],
+    [ "esp:GND.1", "gas1:GND", "black", [ "h0.15" ] ]
+  ],
+  "dependencies": {}
+}

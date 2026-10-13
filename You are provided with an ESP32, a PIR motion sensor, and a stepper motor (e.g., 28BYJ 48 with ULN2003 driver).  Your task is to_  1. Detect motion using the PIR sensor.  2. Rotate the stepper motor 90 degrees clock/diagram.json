@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Dharshini",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -19.2, "left": -33.56, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -5.6, "left": -170.58, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -111.59,
+      "left": 125.23,
+      "attrs": { "size": "17" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pir1:OUT", "esp:15", "green", [ "v0" ] ],
+    [ "stepper1:A-", "esp:17", "green", [ "v0" ] ],
+    [ "stepper1:A+", "esp:16", "green", [ "v0" ] ],
+    [ "stepper1:B+", "esp:18", "green", [ "v0" ] ],
+    [ "stepper1:B-", "esp:19", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
